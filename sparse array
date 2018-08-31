@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main() {
+	int n = 0;
+	int aux = 0;
+	
+	char **arry = NULL;
+	char *a = NULL;
+	
+	scanf("%d", &n);
+	arry = (char**)calloc(n, sizeof(char**));
+	
+	
+	for(int i=0; i < n; i++)
+	{
+		a = (char*)calloc(tamanio, sizeof(char));
+		scanf("%s", a);
+		*(arry + i) = a;
+	}
+	
+	
+	scanf("%d", &aux);
+	a = (char*)calloc(tamanio, sizeof(char));
+	for(int j = 0; j < aux; j++)
+	{
+		
+		scanf("%s", a);
+		int cont = 0;
+		for(int i =0; i< n; i++){
+			
+			if(strncmp(a, *(arry + i), tamanio) == 0)
+			{
+				cont++;
+			}
+		}
+		
+		printf("%d\n", cont);
+		
+	}
+
+	free(a);    
+
+	for(int i= 0; i < n; i++)
+	{
+		
+		if(arry[i] != NULL)
+		{
+			free(arry[i]);
+		}
+	}x
+	if(arry != NULL)
+	{
+		free(arry);
+	}
+	
+	return 0;
+}
