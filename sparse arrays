@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(){
+int n,m,i,j,c[10]={0};
+char str[10][20],s[10][20];
+
+scanf("%d",&n);
+
+//str = (char *)malloc(n * 20 (sizeof(char)));
+
+for(i=0;i<n;++i)
+{
+    scanf("%s",str[i]);
+    fflush(stdin);
+}
+
+scanf("%d",&m);
+
+//s = (char *)malloc(m * 20 (sizeof(char)));
+//c = (int *)malloc(m *(sizeof(int)));
+
+
+for(j=0;j<m;++j)
+{
+    scanf("%s",s[j]);
+    fflush(stdin);
+}
+
+for(j=0;j<m;++j)
+{
+    for(i=0;i<n;++i)
+    {
+        if(strcmp(str[i],s[j])==0)
+        {
+            c[j]++;
+        }
+    }
+}
+
+for(j=0;j<m;++j)
+{
+    printf("%d\n",c[j]);
+}
+
+return 0;
+}
